@@ -1,0 +1,105 @@
+// Specify quick color shorthands
+$black: #000000;
+$white: #ffffff;
+$light-gray: #E0E0E0;
+$medium-gray: #C9C9C9;
+$darker-gray: #A0A0A0;
+
+// Functional colors
+$background: #f9f6f5;
+$text-color: #2A281B;
+$text-color-very-light: #C0C0C0;
+$text-color-light: #A0A0A0;
+$text-color-medium: #656565;
+$link-color: #026594;
+$globe-border: #A9B4C0;
+$arc-border: #C2CDD8;
+
+// widths
+$window-width: 960px;
+$canvas-height: 350px;
+
+
+// Mixins
+@mixin rounded-corners($radius) {
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin rounded-corners-fine($r1, $r2, $r3, $r4) {
+    -moz-border-radius: $r1 $r2 $r3 $r4;
+    border-radius: $r1 $r2 $r3 $r4;
+}
+
+
+// Now the scss
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    height: 100%;
+    background-color: $background;
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+}
+
+a, h1, h3, h4, p {
+    font-family: lato, serif;
+}
+
+h3 em {
+    text-decoration: underline;
+    font-style: normal;
+}
+
+// Now style portfolio objects
+#title {
+    width: $window-width;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+canvas {
+    display:block;
+    margin:0em auto;
+    background:#fff;
+    border:1px solid #ccc
+}
+
+.juxta2 {
+    margin-top: 20px;
+    width: $window-width;
+    height: $canvas-height;
+    background: green;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cropFrame {
+    float: left;
+    margin-bottom: 100px;
+}
+
+.juxta {
+    background: red;
+    width: $window-width;
+    height: $canvas-height;
+    margin-left: auto;
+    margin-right: auto;
+}
+h2.jutxa-title {
+    font-size: 2em;
+    color: red;
+}
+#byline {
+    font-style:italic;
+    font-size:smaller;
+    color:#666
+}

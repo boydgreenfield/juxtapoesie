@@ -1,0 +1,59 @@
+* {
+  margin: 0px;
+  padding: 0px; }
+
+body {
+  height: 100%;
+  background-color: #f9f6f5; }
+
+a {
+  color: #026594;
+  text-decoration: none; }
+
+a, h1, h3, h4, p {
+  font-family: lato, serif; }
+
+h3 em {
+  text-decoration: underline;
+  font-style: normal; }
+
+#title {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 10px; }
+
+canvas {
+  display: block;
+  margin: 0em auto;
+  background: #fff;
+  border: 1px solid #cccccc; }
+
+.juxta2 {
+  margin-top: 20px;
+  width: 960px;
+  height: 350px;
+  background: green;
+  margin-left: auto;
+  margin-right: auto; }
+
+.cropFrame {
+  float: left;
+  margin-bottom: 100px; }
+
+.juxta {
+  background: red;
+  width: 960px;
+  height: 350px;
+  margin-left: auto;
+  margin-right: auto; }
+
+h2.jutxa-title {
+  font-size: 2em;
+  color: red; }
+
+#byline {
+  font-style: italic;
+  font-size: smaller;
+  color: #666666; }
