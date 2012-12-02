@@ -79,10 +79,8 @@
         $("#form1").children()[0].value = "";
     });
     $("#form1").submit(function() {
-        console.log("Submitted1");
-        console.log($("input:first").val());
         $("#form1").hide();
-        $("#img1")[0].src = $("input:first").val();
+        $("#img1")[0].src = $("#form1").children()[0].value;
         crop1 = $("#img1")
    			.crop( {
 				width      : 477
@@ -104,10 +102,8 @@
         $("#form2").children()[0].value = "";
     });
     $("#form2").submit(function() {
-        console.log("Submitted2");
-        console.log($("input:first").val());
         $("#form2").hide();
-        $("#img2")[0].src = $("input:first").val();
+        $("#img2")[0].src = $("#form2").children()[0].value;
         crop2 = $("#img2")
    			.crop( {
 				width      : 477
