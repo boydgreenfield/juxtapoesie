@@ -6,7 +6,7 @@ $medium-gray: #C9C9C9;
 $darker-gray: #A0A0A0;
 
 // Functional colors
-$background: #f9f6f5;
+$background: #fbf9f8;
 $text-color: #2A281B;
 $text-color-very-light: #C0C0C0;
 $text-color-light: #A0A0A0;
@@ -48,13 +48,17 @@ a {
     text-decoration: none;
 }
 
-a, h1, h3, h4, p {
+a, h1, h2, h3, h4, p {
     font-family: lato, serif;
 }
 
 h3 em {
     text-decoration: underline;
     font-style: normal;
+}
+
+h1 {
+    text-align: center;
 }
 
 // Now style portfolio objects
@@ -73,33 +77,53 @@ canvas {
     border:1px solid #ccc
 }
 
-.juxta2 {
-    margin-top: 20px;
+.juxta {
     width: $window-width;
-    height: $canvas-height;
-    background: green;
+//    height: $canvas-height;
+//    background: green;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
 }
+
+.divider {
+    background: $background;
+    height: $canvas-height;
+    float: left;
+    width: 6px;
+}
+
+.juxta-title {
+    width: 450px;
+    margin-bottom: 5px;
+}
+
+.juxta-sub-left {
+    position: absolute;
+    left: 0px;
+    top: 390px;
+}
+
+.juxta-sub-right {
+    position: absolute;
+    right: 0px;
+    top: 390px;
+}
+
+//.divider {
+//    left: $window-width / 2 - 9px;
+//    top: 0px;
+//    width: 18px;
+//  height: $canvas-height;
+//  -webkit-transform: skew(-3deg);
+//     -moz-transform: skew(-3deg);
+//       -o-transform: skew(-3deg);
+//  background: $background;
+//  position: absolute;
+//    z-index: 2;
+//}
 
 .cropFrame {
     float: left;
-    margin-bottom: 100px;
-}
-
-.juxta {
-    background: red;
-    width: $window-width;
-    height: $canvas-height;
-    margin-left: auto;
-    margin-right: auto;
-}
-h2.jutxa-title {
-    font-size: 2em;
-    color: red;
-}
-#byline {
-    font-style:italic;
-    font-size:smaller;
-    color:#666
+//    border-right: 10px solid white;
 }
