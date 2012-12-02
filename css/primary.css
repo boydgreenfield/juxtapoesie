@@ -11,7 +11,8 @@ a {
   text-decoration: none; }
 
 a, h1, h2, h3, h4, p {
-  font-family: lato, serif; }
+  font-family: lato, serif;
+  color: #444444; }
 
 h3 em {
   text-decoration: underline;
@@ -25,7 +26,9 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  font-size: 2em;
+  color: #777777; }
 
 canvas {
   display: block;

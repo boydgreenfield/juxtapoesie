@@ -40,12 +40,12 @@
 </head>
 <body>
 <div id="title">
-    <h1>Juxtapoesie</h1>
+    <h1>Juxtapo&eacute;sie</h1>
 </div>
 
 <div class="juxta">
     <div class="juxta-title" contenteditable="true">
-        <h2>Juxtaposition title (click to edit)</h2>
+        <h2>Title (click to edit)</h2>
     </div>
     <div class="image-box">
         <img class="crop" id="img1" alt="" src="images/no-image.png" />
@@ -108,7 +108,7 @@
         console.log($("input:first").val());
         $("#form2").hide();
         $("#img2")[0].src = $("input:first").val();
-        crop1 = $("#img2")
+        crop2 = $("#img2")
    			.crop( {
 				width      : 477
 				, height   : 350
@@ -120,8 +120,8 @@
         $("#img2")
 			.on( 'mousewheel', function ( event ) {
 				return event.originalEvent.wheelDelta < 0 ?
-					crop1.zoomIn() :
-					crop1.zoomOut();
+					crop2.zoomIn() :
+					crop2.zoomOut();
 			} );
        return false;
     });</script>

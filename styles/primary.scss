@@ -4,6 +4,7 @@ $white: #ffffff;
 $light-gray: #E0E0E0;
 $medium-gray: #C9C9C9;
 $darker-gray: #777;
+$text-black: #444;
 
 // Functional colors
 $background: #fbf9f8;
@@ -50,6 +51,7 @@ a {
 
 a, h1, h2, h3, h4, p {
     font-family: lato, serif;
+    color: $text-black;
 }
 
 h3 em {
@@ -68,6 +70,8 @@ h1 {
     margin-right: auto;
     margin-top: 50px;
     margin-bottom: 10px;
+    font-size: 2em;
+    color: $darker-gray;
 }
 
 canvas {
@@ -116,19 +120,6 @@ canvas {
     width: 477px;
     float: left;
 }
-
-//.img-selector {
-//    width: 200px;
-//    height: 80px;
-//    background: white;
-//    opacity: 0.8;
-//    position: relative;
-//    top: -220px;
-//    left: 140px;
-//    z-index: 2;
-//    @include rounded-corners(15px);
-//    border: 2px solid black;
-//}
 
 input {
     background: #eee;
