@@ -7,36 +7,36 @@
 	<script type="text/javascript" src="scripts/jquery.mousewheel.js"></script>
 	<script type="text/javascript" src="scripts/jquery.crop.js"></script>
 	<script src="http://use.edgefonts.net/lato.js"></script>
-	<script type="text/javascript">
-		$( function () {
-			$( '.crop' ).each( function () {
-				var image     = $( this )
-					, results = image.next( '.results' )
-					, crop    = image
-						.crop( {
-							width      : 477
-							, height   : 350
-							, loading  : 'Hello World'
-							, text     : 'Drag to move, scroll to zoom'
-							//, controls : false
-						} )
-						.on( 'crop', function( event ) {
-							$( '.cropX', results ).text( event.cropX );
-							$( '.cropY', results ).text( event.cropY );
-							$( '.cropW', results ).text( event.cropW );
-							$( '.cropH', results ).text( event.cropH );
-						} )
-						.data( 'crop' );
-				image
-					//.on( 'dblclick', $.proxy( crop.zoomIn, crop ) )
-					.on( 'mousewheel', function ( event ) {
-						return event.originalEvent.wheelDelta < 0 ?
-							crop.zoomIn() :
-							crop.zoomOut();
-					} );
-			} );
-		} );
-	</script>
+    <!-- <script type="text/javascript">
+                $( function () {
+         $( '.crop' ).each( function () {
+             var image     = $( this )
+                 , results = image.next( '.results' )
+                 , crop    = image
+                     .crop( {
+                         width      : 477
+                         , height   : 350
+                         , loading  : 'Hello World'
+                         , text     : 'Drag to move, scroll to zoom'
+                         //, controls : false
+                     } )
+                     .on( 'crop', function( event ) {
+                         $( '.cropX', results ).text( event.cropX );
+                         $( '.cropY', results ).text( event.cropY );
+                         $( '.cropW', results ).text( event.cropW );
+                         $( '.cropH', results ).text( event.cropH );
+                     } )
+                     .data( 'crop' );
+             image
+                            // .on( 'dblclick', $.proxy( crop.zoomIn, crop ) )
+                 .on( 'mousewheel', function ( event ) {
+                     return event.originalEvent.wheelDelta < 0 ?
+                         crop.zoomIn() :
+                         crop.zoomOut();
+                 } );
+         } );
+        } );
+    </script> -->
 </head>
 <body>
 <div id="title">
@@ -45,11 +45,23 @@
 
 <div class="juxta">
     <div class="juxta-title" contenteditable="true">
-        <h2>French Protests</h2>
+        <h2>Juxtaposition title (click to edit)</h2>
     </div>
-    <img class="crop" alt="" src="http://inapcache.boston.com/universal/site_graphics/blogs/bigpicture/greve_10_22/g06_25574551.jpg" />
+    <div class="image-box">
+        <img class="crop" id="img1" alt="" src="images/no-image.png" />
+        <!-- <img class="crop" alt="" src="http://inapcache.boston.com/universal/site_graphics/blogs/bigpicture/greve_10_22/g06_25574551.jpg" /> -->
+        <form id="form1" class="img-selector">
+            <input type="url" name="url1" value="Click, input an image URL, then hit enter" />
+        </form>
+    </div>
     <div class="divider"></div>
-    <img class="crop" alt="" src="http://inapcache.boston.com/universal/site_graphics/blogs/bigpicture/greve_10_22/g07_25466881.jpg" />
+    <div class="image-box">
+        <img class="crop" id="img2" alt="" src="images/no-image.png" />
+        <!-- <img class="crop" alt="" src="http://inapcache.boston.com/universal/site_graphics/blogs/bigpicture/greve_10_22/g07_25466881.jpg" /> -->
+        <form id="form2" class="img-selector">
+            <input type="url" name="url2" value="Click, input an image URL, then hit enter" />
+        </form>
+    </div>
     <div class="juxta-sub-left" contenteditable="true">
         <p>Credit for this image</p>
     </div>
@@ -57,5 +69,62 @@
         <p>And credits here</p>
     </div>
 </div>
+
+
+
+<script type="text/javascript">
+    var url1;
+    var url2;
+    $("#form1").click(function() {
+        $("#form1").children()[0].value = "";
+    });
+    $("#form1").submit(function() {
+        console.log("Submitted1");
+        console.log($("input:first").val());
+        $("#form1").hide();
+        $("#img1")[0].src = $("input:first").val();
+        crop1 = $("#img1")
+   			.crop( {
+				width      : 477
+				, height   : 350
+				, loading  : 'Hello World'
+				, text     : 'Drag to move, scroll to zoom'
+				//, controls : false
+			} )
+			.data('crop');
+        $("#img1")
+			.on( 'mousewheel', function ( event ) {
+				return event.originalEvent.wheelDelta < 0 ?
+					crop1.zoomIn() :
+					crop1.zoomOut();
+			} );
+       return false;
+    });
+    $("#form2").click(function() {
+        $("#form2").children()[0].value = "";
+    });
+    $("#form2").submit(function() {
+        console.log("Submitted2");
+        console.log($("input:first").val());
+        $("#form2").hide();
+        $("#img2")[0].src = $("input:first").val();
+        crop1 = $("#img2")
+   			.crop( {
+				width      : 477
+				, height   : 350
+				, loading  : 'Hello World'
+				, text     : 'Drag to move, scroll to zoom'
+				//, controls : false
+			} )
+			.data('crop');
+        $("#img2")
+			.on( 'mousewheel', function ( event ) {
+				return event.originalEvent.wheelDelta < 0 ?
+					crop1.zoomIn() :
+					crop1.zoomOut();
+			} );
+       return false;
+    });</script>
+
 </body>
 </html>
