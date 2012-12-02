@@ -59,6 +59,17 @@ canvas {
   width: 450px;
   margin-bottom: 5px; }
 
+.juxta-credit {
+  position: absolute;
+  top: 12px;
+  right: 0px; }
+
+p.credit {
+  display: inline;
+  font-size: 0.6em;
+  color: #777777;
+  text-align: right; }
+
 .juxta-sub-left {
   position: absolute;
   left: 0px;

@@ -1,7 +1,7 @@
 // Specify quick color shorthands
 $black: #000000;
 $white: #ffffff;
-$light-gray: #E0E0E0;
+$light-gray: #D0D0D0;
 $medium-gray: #C9C9C9;
 $darker-gray: #777;
 $text-black: #444;
@@ -111,6 +111,19 @@ canvas {
 .juxta-title {
     width: 450px;
     margin-bottom: 5px;
+}
+
+.juxta-credit {
+    position: absolute;
+    top: 12px;
+    right: 0px;
+}
+
+p.credit {
+    display: inline;
+    font-size: 0.6em;
+    color: $light-gray;
+    text-align: right;
 }
 
 .juxta-sub-left {
