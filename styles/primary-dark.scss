@@ -4,10 +4,10 @@ $white: #ffffff;
 $light-gray: #E0E0E0;
 $medium-gray: #C9C9C9;
 $darker-gray: #777;
-$text-black: #444;
+$text-black: #1f1f1f;
 
 // Functional colors
-$background: #fbf9f8;
+$background: #cfcccc;
 $text-color: #2A281B;
 $text-color-very-light: #C0C0C0;
 $text-color-light: #A0A0A0;
@@ -41,7 +41,7 @@ $canvas-height: 350px;
 
 body {
     height: 100%;
-    background-color: $background;
+    background-color: $text-black;
 }
 
 a {
@@ -51,7 +51,7 @@ a {
 
 a, h1, h2, h3, h4, p {
     font-family: lato, serif;
-    color: $text-black;
+    color: $background;
 }
 
 h3 em {
@@ -79,9 +79,9 @@ h1 {
 }
 
 #title em {
-    -webkit-text-fill-color: white;
+    -webkit-text-fill-color: black;
     -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-color: white;
     font-style: normal;
 }
 
@@ -102,7 +102,7 @@ canvas {
 }
 
 .divider {
-    background: $background;
+    background: $text-black;
     height: $canvas-height;
     float: left;
     width: 6px;

@@ -4,7 +4,7 @@
 
 body {
   height: 100%;
-  background-color: #fbf9f8; }
+  background-color: #1f1f1f; }
 
 a {
   color: #026594;
@@ -12,7 +12,7 @@ a {
 
 a, h1, h2, h3, h4, p {
   font-family: lato, serif;
-  color: #444444; }
+  color: #cfcccc; }
 
 h3 em {
   text-decoration: underline;
@@ -32,9 +32,9 @@ h1 {
   color: #777777; }
 
 #title em {
-  -webkit-text-fill-color: white;
+  -webkit-text-fill-color: black;
   -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-color: white;
   font-style: normal; }
 
 canvas {
@@ -50,7 +50,7 @@ canvas {
   position: relative; }
 
 .divider {
-  background: #fbf9f8;
+  background: #1f1f1f;
   height: 350px;
   float: left;
   width: 6px; }
