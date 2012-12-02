@@ -22,6 +22,7 @@ h1 {
   text-align: center; }
 
 #title {
+  padding-left: 22px;
   width: 960px;
   margin-left: auto;
   margin-right: auto;
@@ -29,6 +30,12 @@ h1 {
   margin-bottom: 10px;
   font-size: 2em;
   color: #777777; }
+
+#title em {
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  font-style: normal; }
 
 canvas {
   display: block;

@@ -33,6 +33,7 @@
 	float     : left;
 	color     : #fff;
 	font-size : 11px;
+	font-family: lato, serif;
 	margin    : 7px 0 0 5px;
 }
 .cropZoomIn,
@@ -53,12 +54,14 @@
 	cursor          : pointer;
 }
 .cropZoomIn::after {
+    line-height: 16px;
+    margin-left: 0px;
 	content : "+";
 }
 .cropZoomOut::after {
 	vertical-align : top;
-	line-height    : 14px;
+	line-height    : 16px;
 	font-size      : 22px;
-	margin-left    : -2px;
+	margin-left    : 0px;
 	content        : "-";
 }
