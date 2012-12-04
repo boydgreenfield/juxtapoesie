@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 # Build a series of posts drawing from the Parse API, then post to Tumblr as
 # drafts; run as a chron job
 import ParsePy
@@ -136,7 +138,7 @@ for j in Juxtas:
 
     # Push the post
     try:
-        retcode = call("tumblr post post.yaml --host=\"juxtaphotopoesie.tumblr.com\"", shell=True)
+        retcode = call("/usr/local/bin/tumblr post post.yaml --host=\"juxtaphotopoesie.tumblr.com\"", shell=True)
         if retcode != 0:
             print >>sys.stderr, "Error", -retcode
     except OSError as e:
