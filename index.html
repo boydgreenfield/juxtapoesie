@@ -1,11 +1,12 @@
 <html>
 <head>
     <title>Compo&eacute;sition</title>
-    <link rel="stylesheet" href="css/primary-dark.css" type="text/css" />
+    <link rel="stylesheet" href="css/primary.css" type="text/css" />
     <link rel="stylesheet" href="scripts/jquery.crop.css" type="text/css" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script type="text/javascript" src="scripts/jquery.mousewheel.js"></script>
 	<script type="text/javascript" src="scripts/jquery.crop.js"></script>
+	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.1.14.min.js"></script>
 	<script src="http://use.edgefonts.net/lato.js"></script>
     <!-- <script type="text/javascript">
                 $( function () {
@@ -45,7 +46,7 @@
 
 <div class="juxta">
     <div class="juxta-title" contenteditable="true">
-        <h2>Title (click to edit)</h2>
+        <h2 id="juxta-title-text">Title (click to edit)</h2>
     </div>
     <div class="image-box">
         <img class="crop" id="img1" alt="" src="images/no-image-3.png" />
@@ -63,29 +64,33 @@
         </form>
     </div>
     <div class="juxta-credit">
-        <p class="credit">Left: </p><p class="credit" contenteditable="true">(Insert name and year for left image)</p>
-        <p class="credit">/ Right: </p><p class="credit" contenteditable="true">(Insert name and year for right image)</p>
-        <p class="credit">/ Posted by: </p><p class="credit" contenteditable="true">(Insert poster's name)</p>
+        <p class="credit">Left: </p><p class="credit" id="credit-left" contenteditable="true">(Insert name and year for left image)</p>
+        <p class="credit">/ Right: </p><p class="credit" id="credit-right" contenteditable="true">(Insert name and year for right image)</p>
+        <p class="credit">/ Posted by: </p><p class="credit" id="credit-poster" contenteditable="true">(Insert poster's name)</p>
     </div>
     <div class="juxta-sub-left" contenteditable="true">
-        <p>Credit for this image</p>
+        <p id="juxta-sub-left-text">Credit for this image</p>
     </div>
     <div class="juxta-sub-right" contenteditable="true">
-        <p>And credits here</p>
+        <p id="juxta-sub-right-text">And credits here</p>
     </div>
 </div>
+<div id="submit"></div>
+
 
 
 
 <script type="text/javascript">
-    var url1;
-    var url2;
+    var url1 = "NONE";
+    var url2 = "NONE";
+    var parseSetup = true;
     $("#form1").click(function() {
         $("#form1").children()[0].value = "";
     });
     $("#form1").submit(function() {
         $("#form1").hide();
-        $("#img1")[0].src = $("#form1").children()[0].value;
+        url1 = $("#form1").children()[0].value;
+        $("#img1")[0].src = url1;
         crop1 = $("#img1")
    			.crop( {
 				width      : 477
@@ -108,7 +113,8 @@
     });
     $("#form2").submit(function() {
         $("#form2").hide();
-        $("#img2")[0].src = $("#form2").children()[0].value;
+        url2 = $("#form2").children()[0].value;
+        $("#img2")[0].src = url2;
         crop2 = $("#img2")
    			.crop( {
 				width      : 477
@@ -125,7 +131,35 @@
 					crop2.zoomOut();
 			} );
        return false;
-    });</script>
+    });
+    $("#submit").click(function() {
+        console.log("Clicked submit.");
+        if (parseSetup) {
+            Parse.initialize("q8sM1Xow1a7vRz1igIbZrIUhHEVbyeSmOt6fErqd", "Y9Cu8ptw3RaV5MxSw5GcfKwFF0dKDaKLkgKm3uX9");
+            parseSetup = false;
+            console.log("Initialized Parse.")
+        }
+        var Juxta = Parse.Object.extend("Juxta");
+        var Juxta = new Juxta();
+        Juxta.save({
+            url1: url1,
+            url2: url2,
+            crop1: crop1.result,
+            crop2: crop2.result,
+            title: $("#juxta-title-text").text(),
+            subleft: $("#juxta-sub-left-text").text(),
+            subright: $("#juxta-sub-right-text").text(),
+            leftcredit: $("#credit-left").text(),
+            rightcredit: $("#credit-right").text(),
+            postcredit: $("#credit-poster").text()
+        }, {
+          success: function(object) {
+            alert("Saved. Thank you!");
+          }
+        });
+    })
+
+</script>
 
 </body>
 </html>
