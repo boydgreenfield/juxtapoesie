@@ -139,7 +139,7 @@ p.credit {
 }
 
 .image-box {
-    background: yellow;
+//    background: yellow;
     height: 350px;
     width: 477px;
     float: left;
@@ -192,6 +192,10 @@ p.img-selector {
     position: absolute;
     width: 45px;
     text-align: center;
+}
+
+.hidden {
+    display: none;
 }
 
 //.divider {

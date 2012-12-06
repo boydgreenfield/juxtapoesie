@@ -52,7 +52,7 @@
     <div class="image-box">
         <img class="crop" id="img1" alt="" src="images/no-image-3.png" />
         <!-- <img class="crop" alt="" src="http://inapcache.boston.com/universal/site_graphics/blogs/bigpicture/greve_10_22/g06_25574551.jpg" /> -->
-        <form id="form1" class="img-selector">
+        <form id="form1" class="img-selector hidden">
             <input type="url" name="url1" value="Click, input an image URL, then hit enter" />
         </form>
     </div>
@@ -60,7 +60,7 @@
     <div class="image-box">
         <img class="crop" id="img2" alt="" src="images/no-image-3.png" />
         <!-- <img class="crop" alt="" src="http://inapcache.boston.com/universal/site_graphics/blogs/bigpicture/greve_10_22/g07_25466881.jpg" /> -->
-        <form id="form2" class="img-selector">
+        <form id="form2" class="img-selector hidden">
             <input type="url" name="url2" value="Click, input an image URL, then hit enter" />
         </form>
     </div>
@@ -84,6 +84,8 @@
 
 
 <script type="text/javascript">
+    $("#form1").removeClass("hidden");
+    $("#form2").removeClass("hidden");
     var url1 = "NONE";
     var url2 = "NONE";
     var parseSetup = true;
