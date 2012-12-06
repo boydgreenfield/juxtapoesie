@@ -109,7 +109,7 @@ canvas {
 }
 
 .juxta-title {
-    width: 450px;
+    width: 480px;
     margin-bottom: 5px;
 }
 
@@ -177,6 +177,14 @@ p.img-selector {
     margin-top: 1px;
     padding-left: 10px;
     color: $text-color-medium;
+}
+
+#submit:hover p {
+    color: $text-black;
+}
+
+#submit:hover i {
+    color: $text-black;
 }
 
 .icon-envelope-alt {
