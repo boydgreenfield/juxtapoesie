@@ -84,8 +84,10 @@
 
 
 <script type="text/javascript">
-    $("#form1").removeClass("hidden");
-    $("#form2").removeClass("hidden");
+    jQuery(function() {
+        $("#form1").removeClass("hidden");
+        $("#form2").removeClass("hidden");
+    });
     var url1 = "NONE";
     var url2 = "NONE";
     var parseSetup = true;
