@@ -1,0 +1,370 @@
+<html>
+    <head>
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+
+        <meta name="color:Background" content="#fbf9f8"/>
+        <meta name="color:Font" content="#444444"/>
+        <meta name="color:FontLight" content="#D0D0D0"/>
+        <meta name="color:LinkActive" content="#444444"/>
+        <meta name="color:Tags" content="#fbf9f8"/>
+        <meta name="color:Date" content="#fbf9f8"/>
+        <meta name="color:CreditsRollover" content="#B0B0B0"/>
+        <meta name="TweetLink" content={URL} + "iii"/>
+
+
+        <script src="http://use.edgefonts.net/lato.js"></script>
+        <script type="text/javascript" src="http://static.tumblr.com/opaxxoh/fEUmell40/mini_twitter_intents-ck.js"></script>
+
+
+        <style type="text/css">
+        @font-face{
+            font-family: 'WebIconFonts';
+            src: url('http://static.tumblr.com/opaxxoh/y6nmeljjy/webiconfonts.eot');
+            src: url('http://static.tumblr.com/opaxxoh/y6nmeljjy/webiconfonts.eot?') format('eot'),
+            url('http://static.tumblr.com/opaxxoh/UF1meljl6/webiconfonts.woff') format('woff'),
+            url('http://static.tumblr.com/opaxxoh/ez8meljll/webiconfonts.ttf') format('truetype');
+        }
+
+        .icon {
+            font-family: WebIconFonts;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ol {
+            list-style-type: none;
+        }
+
+        body {
+            height: 100%;
+            background-color: {color:Background};
+        }
+
+        h1 {
+            padding-left: 22px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            font-family: lato, serif;
+            font-size: 4em;
+            color: {color:Font};
+            text-align: center;
+        }
+
+        h1 em {
+            -webkit-text-fill-color: white;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: black;
+            font-style: normal;
+        }
+
+        .post {
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 150px;
+            width: 980px;
+            height: 350px;
+            position: relative;
+        }
+
+        .post h2 {
+            color: blue;
+            position: absolute;
+            top: -33px;
+            margin-left: 7px;
+            font-family: lato, serif;
+        }
+
+        .post h2 a {text-decoration: none;}
+        .post h2 a:link {color: {color:Font};}
+        .post h2 a:visited {color: {color:Font};}
+        .post h2 a:hover {color: {color:Font};}
+        .post h2 a:active {color: {color:Font};}
+
+        .left-image {
+            margin-left: 7px;
+            float: left;
+        }
+
+        .right-image {
+            margin-left: 6px;
+            float: left;
+        }
+
+        .top-info {
+            position: absolute;
+            right: 7px;
+            top: -18px;
+            font-family: lato, serif;
+            font-size: 0.6em;
+            text-align: right;
+            color: {color:FontLight};
+        }
+
+        .top-info:hover {
+            color: {color:CreditsRollover};
+        }
+
+        .left-caption {
+            position: absolute;
+            left: 7px;
+            top: 357px;
+            font-family: lato, serif;
+            font-size: 1em;
+            text-align: left;
+        }
+
+        .right-caption {
+            position: absolute;
+            right: 7px;
+            top: 357px;
+            font-family: lato, serif;
+            font-size: 1em;
+            text-align: right;
+        }
+
+        #footer {
+            position: fixed;
+            bottom: 0px;
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        #pagination {
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            margin-bottom: 10px;
+            color: {color:Font;};
+        }
+
+        #pagination p {
+            display: inline;
+            font-family: lato, serif;
+            font-size: 1em;
+        }
+
+        #pagination a:link {color: {color:Font};}
+        #pagination a:visited {color: {color:Font};}
+        #pagination a:hover {color: {color:LinkActive};}
+        #pagination a:active {color: {color:LinkActive};}
+        #pagination a {text-decoration: none;}
+
+        #tools {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 90px;
+            height: 75px;
+        }
+
+        #tools-1 {
+            margin-top: 2px;
+            margin-left: 0px
+            height: 25px;
+            width: 25px;
+            text-align: center;
+            float: left;
+        }
+        #tools-2 {
+            margin-top: 2px;
+            margin-left: 5px;
+            height: 25px;
+            width: 25px;
+            text-align: center;
+            float: left;
+        }
+        #tools-3 {
+            margin-top: 2px;
+            margin-left: 5px;
+            height: 45px;
+            width: 25px;
+            text-align: center;
+            float: left;
+        }
+
+        .iconcomment {
+            position: absolute;
+            left: 0px;
+            top: 30px;
+            font-family: lato, serif;
+            font-size: 0.9em;
+            text-align: center;
+            color: transparent;
+        }
+
+        .iconfont {
+            font-family: WebIconFonts;
+            font-size: 1.4em;
+            color: {color:FontLight};
+        }
+
+        #tools-1 .iconcomment {
+            padding-left: 22px;
+        }
+
+        #tools-2 .iconcomment {
+            padding-left: 26px;
+        }
+
+        #tools-3 .iconcomment {
+            padding-left: 5px;
+        }
+
+        #tools-1:hover p {
+            color: {color:Font};
+        }
+
+        #tools-2:hover p {
+            color: {color:Font};
+        }
+
+        #tools-3:hover p {
+            color: {color:Font};
+        }
+
+        </style>
+    </head>
+    <body>
+        <h1>Juxta<em>po&eacute;sie</em></h1>
+        <div id="tools">
+            <a href="https://www.tumblr.com/register/follow/juxtapoet" target="_blank"><div id="tools-1">
+                <p class="iconcomment">Follow</p>
+                <p class="iconfont">B</p>
+            </div></a>
+            <a href="https://twitter.com/intent/tweet?url=http://www.juxtapoesie.com/&via=boydgreenfield">
+                <div id="tools-2">
+                <p class="iconcomment">Share</p>
+                <p class="iconfont">T</p>
+                </div>
+            </a>
+            <a href="http://compose.juxtapoesie.com" target="_blank">
+                <div id="tools-3">
+                <p class="iconcomment">Suggest post</p>
+                <p class="iconfont">'</p>
+            </div></a>
+        </div>
+
+        {block:Description}
+            <p id="description">{Description}</p>
+        {/block:Description}
+
+        <ol id="posts">
+            {block:Posts}
+                {block:Text}
+                    <li class="post text">
+                        {block:Title}
+                            <h2><a href="{Permalink}">{Title}</a></h2>
+                        {/block:Title}
+
+                        {Body}
+                    </li>
+                {/block:Text}
+
+                {block:Photo}
+                    <li class="post photo">
+                        <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Photo}
+
+                {block:Photoset}
+                    <li class="post photoset">
+                        {Photoset-500}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Photoset}
+
+                {block:Quote}
+                    <li class="post quote">
+                        "{Quote}"
+
+                        {block:Source}
+                            <div class="source">{Source}</div>
+                        {/block:Source}
+                    </li>
+                {/block:Quote}
+
+                {block:Link}
+                    <li class="post link">
+                        <a href="{URL}" class="link" {Target}>{Name}</a>
+
+                        {block:Description}
+                            <div class="description">{Description}</div>
+                        {/block:Description}
+                    </li>
+                {/block:Link}
+
+                {block:Chat}
+                    <li class="post chat">
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+
+                        <ul class="chat">
+                            {block:Lines}
+                                <li class="{Alt} user_{UserNumber}">
+                                    {block:Label}
+                                        <span class="label">{Label}</span>
+                                    {/block:Label}
+
+                                    {Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+                    </li>
+                {/block:Chat}
+
+                {block:Video}
+                    <li class="post video">
+                        {Video-500}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Video}
+
+                {block:Audio}
+                    <li class="post audio">
+                        {AudioPlayerBlack}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Audio}
+            {/block:Posts}
+        </ol>
+
+        <div id="footer">
+            {block:Pagination}
+            <div id="pagination">
+            {block:PreviousPage}
+                <a id="prev-page" href="{PreviousPage}">
+                <p>&#171; Previous</a></p>
+            {/block:PreviousPage}
+            <p>|</p>
+            {block:NextPage}
+                <a id="next-page" href="{NextPage}">
+                <p>Next &#187;</a></p>
+            {/block:NextPage}
+            </div>
+            {/block:Pagination}
+        </div>
+    </body>
+</html>

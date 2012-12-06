@@ -23,6 +23,7 @@ IMAGE_SIZE = (480, 350)
 AMAZON_ACCESS_KEY = "***"
 AMAZON_SECRET_KEY = "***"
 BUCKET_NAME = "juxtapoesie"
+QUALITY = 90
 
 # Connect to Amazon S3
 S3 = boto.connect_s3(AMAZON_ACCESS_KEY, AMAZON_SECRET_KEY)
@@ -91,8 +92,13 @@ for j in Juxtas:
     outfile2 = ('crop_' + str(random.randint(1000, 9999)) + '_' +
                 os.path.split(j.url2)[1])
 
-    region1.save(outfile1, i1.format)
-    region2.save(outfile2, i2.format)
+    if i1.format == "PNG":
+        QUALITYUSE = 75
+    else:
+        QUALITYUSE = QUALITY
+
+    region1.save(outfile1, i1.format, quality=QUALITY)
+    region2.save(outfile2, i2.format, quality=QUALITY)
 
     # Upload images to S3, get new URL (hold old url for post)
     k.key = outfile1
@@ -120,8 +126,8 @@ for j in Juxtas:
             "<a target=\"_blank\" href=\"" + j.url2 + "\">" +
             "<img src=\"" + url2az + "\" width=" + str(IMAGE_SIZE[0]) +
             " />" + "</a>" + "</div>" +
-            "<p class=\"top-info\">" + "Left: " + j.leftcredit +
-                    " Right: " + j.rightcredit +
+            "<p class=\"top-info\">" + "Left: " + j.leftcredit + " / " +
+                    " Right: " + j.rightcredit + " / " +
                     " Posted by: " + j.postcredit + "</p>" +
             "<p class=\"left-caption\">" + j.subleft + "</p>" +
             "<p class=\"right-caption\">" + j.subright + "</p>" +
@@ -138,7 +144,7 @@ for j in Juxtas:
 
     # Push the post
     try:
-        retcode = call("/usr/local/bin/tumblr post post.yaml --host=\"juxtaphotopoesie.tumblr.com\"", shell=True)
+        retcode = call("/usr/local/bin/tumblr post post.yaml --host=\"juxtapoet.tumblr.com\"", shell=True)
         if retcode != 0:
             print >>sys.stderr, "Error", -retcode
     except OSError as e:
