@@ -112,8 +112,23 @@ p.img-selector {
 #submit {
   width: 50px;
   height: 50px;
-  background: red;
-  float: left; }
+  float: left;
+  margin-top: 1px;
+  padding-left: 10px;
+  color: #656565; }
+
+.icon-envelope-alt {
+  font-size: 1.8em;
+  padding-left: 8px; }
+
+#submit p {
+  font-family: lato, serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.5em;
+  position: absolute;
+  width: 45px;
+  text-align: center; }
 
 .cropFrame {
   float: left; }
