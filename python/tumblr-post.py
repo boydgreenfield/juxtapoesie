@@ -82,9 +82,13 @@ for j in Juxtas:
     cropBox = (cropX1, cropY1, cropX2, cropY2)
     region2 = i2.crop(cropBox)
 
+    # Change color palettes
+    region1 = region1.convert("RGB")
+    region2 = region2.convert("RGB")
+
     # Resize as necessary
-    region1 = region1.resize(IMAGE_SIZE)
-    region2 = region2.resize(IMAGE_SIZE)
+    region1 = region1.resize(IMAGE_SIZE, Image.ANTIALIAS)
+    region2 = region2.resize(IMAGE_SIZE, Image.ANTIALIAS)
 
     # Export images
     outfile1 = ('crop_' + str(random.randint(1000, 9999)) + '_' +
