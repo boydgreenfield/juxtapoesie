@@ -14,7 +14,6 @@ from boto.s3.key import Key
 import re
 from subprocess import call
 import sys
-import yaml
 
 # Major global variables
 PARSE_APP_ID = "***"
@@ -116,7 +115,6 @@ for j in Juxtas:
     # Build a post and post
     yamlBegin =  "---" + "\n" + "type: text" + "\n"
     title = "title: " + j.title + "\n"
-    title = title.replace("'", "''")
     body1 = "body: "
     body2 = ("<div class=\"juxta\">" +
             "<div class=\"left-image\">" +
@@ -133,15 +131,14 @@ for j in Juxtas:
             "<p class=\"left-caption\">" + j.subleft + "</p>" +
             "<p class=\"right-caption\">" + j.subright + "</p>" +
             "</div>")
-    body2 = body2.replace("'", "''")
-    body = body1 + "'" + body2 + "'" + "\n"
+    body = body1 + "| " + body2 + "\n"
     yamlEnd = "state: draft" + "\n" + "---"
     yamlWhole = yamlBegin + title + body + yamlEnd
-    # yamlWhole.replace("'", "''")  # Yaml escaping
+    yamlWholeU = yamlWhole.encode('UTF-8')
 
     # Write the post to a YAML file
     with open("post.yaml", "w") as text_file:
-        text_file.write(str(yamlWhole))
+        text_file.write(yamlWholeU)
 
     # Push the post
     try:
