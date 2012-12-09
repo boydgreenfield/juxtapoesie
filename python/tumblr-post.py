@@ -122,11 +122,11 @@ for j in Juxtas:
     body1 = "body: "
     body2 = ("<div class=\"juxta\">" +
             "<div class=\"left-image\">" +
-            "<a target=\"_blank\" href=\"" + j.url1 + "\">" +
+            "<a title=\"&lt;a target=&quot;_blank&quot; href=&quot;" + j.url1 + "&quot; &gt;Link to the original image&lt;/a&gt;\" rel=\"lightbox\" href=\"" + j.url1 + "\">" +
             "<img src=\"" + url1az + "\" width=" + str(IMAGE_SIZE[0]) +
             " />" + "</a>" + "</div>" +
             "<div class=\"right-image\">" +
-            "<a target=\"_blank\" href=\"" + j.url2 + "\">" +
+            "<a title=\"&lt;a target=&quot;_blank&quot; href=&quot;" + j.url2 + "&quot; &gt;Link to the original image&lt;/a&gt;\" rel=\"lightbox\" href=\"" + j.url2 + "\">" +
             "<img src=\"" + url2az + "\" width=" + str(IMAGE_SIZE[0]) +
             " />" + "</a>" + "</div>" +
             "<p class=\"top-info\">" + "Left: " + j.leftcredit + " / " +
