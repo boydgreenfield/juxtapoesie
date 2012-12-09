@@ -145,7 +145,9 @@
         }
 
         #pagination {
-            width: 200px;
+            width: 160px;
+            height: 30px;
+            position: relative;
             margin-left: auto;
             margin-right: auto;
             text-align: center;
@@ -154,9 +156,35 @@
         }
 
         #pagination p {
-            display: inline;
             font-family: lato, serif;
             font-size: 1em;
+        }
+
+        #next-page {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 75px;
+            height: 30px;
+            text-align: left;
+        }
+
+        #page-divider {
+            position: absolute;
+            top: 0px;
+            right: 75px;
+            width: 10px;
+            height: 30px;
+            text-align: center;
+        }
+
+        #prev-page {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 75px;
+            height: 30px;
+            text-align: right;
         }
 
         #pagination a:link {color: {color:Font};}
@@ -366,13 +394,11 @@
             {block:Pagination}
             <div id="pagination">
             {block:PreviousPage}
-                <a id="prev-page" href="{PreviousPage}">
-                <p>&#171; Previous</a></p>
+                <p id="prev-page"><a id="prev-page-link" href="{PreviousPage}">&#171; Previous</a></p>
             {/block:PreviousPage}
-            <p>|</p>
+            <p id="page-divider">|</p>
             {block:NextPage}
-                <a id="next-page" href="{NextPage}">
-                <p>Next &#187;</a></p>
+                <p id="next-page"><a id="next-page-link" href="{NextPage}">Next &#187;</a></p>
             {/block:NextPage}
             </div>
             {/block:Pagination}
