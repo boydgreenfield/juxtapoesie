@@ -14,6 +14,7 @@ from boto.s3.key import Key
 import re
 from subprocess import call
 import sys
+import yaml
 
 # Major global variables
 PARSE_APP_ID = "***"
@@ -40,7 +41,7 @@ time1hrISO = time1hr.strftime("%Y-%m-%dT%H:%M:%S.%f")[0:-3] + 'Z'
 time1hrISO = {"__type": "Date", "iso": time1hrISO}
 
 query = ParsePy.ParseQuery("Juxta")
-query = query.gt("createdAt", time1hrISO)
+query = query.gt("updatedAt", time1hrISO)
 Juxtas = query.fetch()
 
 # Create a top-level temporary folder for the job
@@ -140,7 +141,7 @@ for j in Juxtas:
 
     # Write the post to a YAML file
     with open("post.yaml", "w") as text_file:
-        text_file.write(yamlWhole)
+        text_file.write(str(yamlWhole))
 
     # Push the post
     try:
