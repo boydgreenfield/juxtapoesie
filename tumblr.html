@@ -46,7 +46,7 @@
         a:hover {color: {color:Font};}
         a:active {color: {color:Font};}
 
-        ol {
+        ul, ol {
             list-style-type: none;
         }
 
@@ -115,9 +115,9 @@
             color: {color:FontLight};
         }
 
-        .top-info:hover {
-            color: {color:CreditsRollover};
-        }
+        //.top-info:hover {
+        //    color: {color:CreditsRollover};
+        //}
 
         .left-caption {
             position: absolute;
@@ -186,6 +186,60 @@
             height: 30px;
             text-align: right;
         }
+
+        #posts {
+            position: relative;
+            width: 980px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #left-sidebar {
+            position: absolute;
+            width: 65px;
+            height: 350px;
+            top: 0px;
+            left: -65px;
+        }
+
+        #date {
+            position: absolute;
+            width: 65px;
+            height: 12px;
+            right: -72px;
+            top: -45px;
+            // right: 4px;
+            // top: 5px;
+            text-align: left;
+        }
+
+        #tags {
+            position: absolute;
+            width: 65px;
+            height: 50px;
+            right: 0px;
+            top: 48px;
+            text-align: right;
+        }
+
+
+
+        #date p {
+            font-family: lato, serif;
+            font-size: 0.7em;
+            color: {color:FontLight};
+        }
+
+        #tags p {
+            font-family: lato, serif;
+            font-size: 0.7em;
+            color: {color:FontLight};
+        }
+
+        #tags a:link {color: {color:FontLight};}
+        #tags a:visited {color: {color:FontLight};}
+        #tags a:hover {color: {color:Font};}
+        #tags a:active {color: {color:LinkActive};}
 
         #pagination a:link {color: {color:Font};}
         #pagination a:visited {color: {color:Font};}
@@ -387,6 +441,22 @@
                         {/block:Caption}
                     </li>
                 {/block:Audio}
+                <div id="left-sidebar">
+                    {block:HasTags}
+                        <ul id="tags">
+                            {block:Tags}
+                                <li>
+                                    <p><a href="{TagURL}">#{Tag}</a></p>
+                                </li>
+                            {/block:Tags}
+                        </ul>
+                    {/block:HasTags}
+                    {block:Date}
+                        <div id="date">
+                            <p>{DayOfMonth} {ShortMonth} {Year}</p>
+                        </div>
+                    {/block:Date}
+                </div>
             {/block:Posts}
         </ol>
 
